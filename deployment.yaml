@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: food-ordering-system
-          image: food-ordering-system:latest
-          imagePullPolicy: IfNotPresent
+          image: surxverse/food-ordering-ci-cd:latest
+          imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
