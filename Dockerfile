@@ -1,3 +1,4 @@
+
 FROM maven:3.9.12-eclipse-temurin-17
 
 WORKDIR /app
@@ -7,4 +8,4 @@ COPY src ./src
 
 RUN mvn clean test
 
-CMD ["java", "-cp", "target/classes", "com.foodorder.FoodOrderApp"]
+CMD ["sh", "-c", "java -cp target/classes com.foodorder.FoodOrderApp; exec tail -f /dev/null"]
