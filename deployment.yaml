@@ -1,31 +1,17 @@
-apiVersion: apps/v1
-kind: Deployment
+
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: food-ordering-system
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: food-ordering-system
+  backoffLimit: 2
   template:
     metadata:
       labels:
         app: food-ordering-system
     spec:
+      restartPolicy: Never
       containers:
         - name: food-ordering-system
           image: surxverse/food-ordering-ci-cd:latest
           imagePullPolicy: Always
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: food-ordering-system-service
-spec:
-  type: NodePort
-  selector:
-    app: food-ordering-system
-  ports:
-    - port: 8080
-      targetPort: 8080
-      nodePort: 30080
