@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout Git') {
             steps {
                 git branch: 'main',
-                    url: 'YOUR_GIT_REPOSITORY_URL'
+                    url: 'https://github.com/dharanip7282-cyber/food-ordering-system.git'
             }
         }
 
