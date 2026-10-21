@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'surxverse/food-ordering-ci-cd'
-        DOCKER_CREDENTIALS = 'dockerhub-credentials'
+        DOCKER_CREDENTIALS = 'dockerhub-cred'
     }
 
     stages {
